@@ -5,7 +5,7 @@ hero:
   text: 探究技术的意义
   tagline: 心如花木，向阳而生
   image:
-    src: /public/logo.png
+    src: https://api.likepoems.com/img/bing
     alt: image
   actions:
     - theme: brand

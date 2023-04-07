@@ -1,0 +1,25 @@
+{
+  "name": "luotianacg-wiki",
+  "version": "1.0.0",
+  "description": "知识库",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/luotian2020/luotianacg-wiki.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.61.0",
+    "vitepress": "^1.0.0-alpha.65"
+  }
+}

@@ -39,6 +39,10 @@ module.exports = {
                 link: '/share/'
             },
             {
+                text: '信学先锋',
+                link: '/pioneer/'
+            },
+            {
                 text: '友情链接',
                 items: [
                     { text: 'Github', link: 'https://github.com/luotian2020' },
@@ -76,6 +80,16 @@ module.exports = {
                     collapsible: true,
                     items: [
                         {text: '概述', link: '/share/'},
+                    ]
+                },
+            ],
+            '/pioneer/': [
+                {
+                    text: '信学先锋',
+                    collapsible: true,
+                    items: [
+                        {text: '项目概述', link: '/pioneer/'},
+                        {text: '部署流程', link: '/pioneer/pioneer-operation'},
                     ]
                 },
             ],

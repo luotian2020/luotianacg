@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,N as l}from"./chunks/framework.5dab9c2c.js";const C=JSON.parse('{"title":"Python 学习","description":"","frontmatter":{},"headers":[],"relativePath":"blogs/pythonstudy.md"}'),p={name:"blogs/pythonstudy.md"},o=l("",417),t=[o];function e(c,r,y,F,i,D){return n(),a("div",null,t)}const d=s(p,[["render",e]]);export{C as __pageData,d as default};

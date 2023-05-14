@@ -27,20 +27,16 @@ module.exports = {
         // 导航栏配置
         nav: [
             {
-                text: '编程',
-                link: '/blogs/'
+                text: '学习',
+                link: '/study/'
             },
             {
-                text: 'Linux',
-                link: '/linux/'
+                text: '生活',
+                link: '/life/'
             },
             {
-                text: '软件分享',
-                link: '/share/'
-            },
-            {
-                text: '信学先锋',
-                link: '/pioneer/'
+                text: '项目',
+                link: '/project/'
             },
             {
                 text: '友情链接',
@@ -53,43 +49,75 @@ module.exports = {
 
         // 左侧边栏配置
         sidebar: {
-            '/blogs/': [
+            '/study/web-front': [
                 {
-                    text: '编程',
+                    text: 'Web前端',
                     collapsible: true,
                     items: [
-                        {text: '概述', link: '/blogs/'},
-                        {text: 'Git', link: '/blogs/git-study'},
-                        {text: 'Javascript', link: '/blogs/javascript-study'},
-                        {text: 'Python', link: '/blogs/pythonstudy'},
+                        {text: '概述', link: '/study/web-front/'},
                     ]
                 },
             ],
-            '/linux/': [
+            '/study/backend-dev': [
+                {
+                    text: '后端开发',
+                    collapsible: true,
+                    items: [
+                        {text: '概述', link: '/study/backend-dev/'},
+                    ]
+                },
+            ],
+            '/study/code-repo': [
+                {
+                    text: '常用代码',
+                    collapsible: true,
+                    items: [
+                        {text: '概述', link: '/study/code-repo/'},
+                    ]
+                },
+            ],
+            '/study/lang-study': [
+                {
+                    text: '编程语言',
+                    collapsible: true,
+                    items: [
+                        {text: '概述', link: '/study/lang-study/'},
+                    ]
+                },
+            ],
+            '/study/linux-study': [
                 {
                     text: 'Linux',
                     collapsible: true,
                     items: [
-                        {text: '概述', link: '/linux/'},
+                        {text: '概述', link: '/study/linux-study/'},
                     ]
                 },
             ],
-            '/share/': [
+            '/study/project-bug': [
                 {
-                    text: '软件分享',
+                    text: '问题',
                     collapsible: true,
                     items: [
-                        {text: '概述', link: '/share/'},
+                        {text: '概述', link: '/study/project-bug/'},
                     ]
                 },
             ],
-            '/pioneer/': [
+            '/study/tool-study': [
+                {
+                    text: '开发工具',
+                    collapsible: true,
+                    items: [
+                        {text: '概述', link: '/study/tool-study/'},
+                    ]
+                },
+            ],
+            '/project/pioneer': [
                 {
                     text: '信学先锋',
                     collapsible: true,
                     items: [
-                        {text: '项目概述', link: '/pioneer/'},
-                        {text: '部署流程', link: '/pioneer/pioneer-operation'},
+                        {text: '部署流程', link: '/project/pioneer/pioneer-operation'},
                     ]
                 },
             ],

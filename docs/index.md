@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-  name: LuoTianACG
+  name: LuoTian-ACG
   text: 探究技术的意义
   tagline: 心如花木，向阳而生
   image:
@@ -9,18 +9,15 @@ hero:
     alt: image
   actions:
     - theme: brand
-      text: 进入存档
-      link: /blogs/
+      text: 开始学习
+      link: /study/
 features:
-- icon: 编程
-  title: 编程经历
-  details: 用程序代替懒惰的自己...
+- title: 学习
+  details: 学习是充满思想的劳动...
 
-- icon: Linux
-  title: Linux学习
-  details: 学习Linux的一切...
+- title: 生活
+  details: 世上只有一种英雄主义，就是在认清生活真相之后依然热爱生活...
 
-- icon: share
-  title: 软件分享
-  details: 生活、工作的小tips...
+- title: 价值
+  details: 只有一种成功——能以你自己的生活方式度过你的一生...
 ---

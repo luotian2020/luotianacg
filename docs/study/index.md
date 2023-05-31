@@ -6,4 +6,4 @@
  - [编程语言](./lang-study/index.md)
  - [Linux](./linux-study/index.md)
  - [问题总结](./project-bug/index.md)
- - [开发工具](./tool-study//index.md)
+ - [开发工具](./tool-study/index.md)

@@ -82,6 +82,8 @@ module.exports = {
                     collapsible: true,
                     items: [
                         {text: '概述', link: '/study/lang-study/'},
+                        {text: 'JavaScript', link: '/study/lang-study/javascript-study'},
+                        {text: 'Python', link: '/study/lang-study/pythonstudy'},
                     ]
                 },
             ],
@@ -109,6 +111,7 @@ module.exports = {
                     collapsible: true,
                     items: [
                         {text: '概述', link: '/study/tool-study/'},
+                        {text: 'Git', link: '/study/tool-study/git-study'},
                     ]
                 },
             ],

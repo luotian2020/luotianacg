@@ -274,3 +274,32 @@ git push -u origin master//第一次推送
 git push origin master//第二次及之后
 ```
 
+## 12.常见问题
+
+12.1
+
+执行git命令， fatal: detected dubious ownership in repository at 'D:/study/vue/project/galligalli'
+'D:/study/vue/project/galligalli' is owned by:
+
+解决方法：
+
+```shell
+git config --global --add safe.directory "*"
+```
+
+12.2 
+
+在执行git pull 命令时遇到fatal: refusing to merge unrelated histories
+
+```shell
+git pull origin master --allow-unrelated-histories
+```
+
+12.3 
+
+如果缓冲区存在误放进的文件，可以进行清除
+
+```shell
+git reset 文件夹/文件名
+```
+

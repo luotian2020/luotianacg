@@ -84,6 +84,7 @@ module.exports = {
                         {text: '概述', link: '/study/lang-study/'},
                         {text: 'JavaScript', link: '/study/lang-study/javascript-study'},
                         {text: 'Python', link: '/study/lang-study/pythonstudy'},
+                        {text: '正则表达式', link: '/study/lang-study/regexp'},
                     ]
                 },
             ],

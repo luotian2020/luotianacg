@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as a}from"./chunks/framework.9ae6acb2.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"study/lang-study/index.md","filePath":"study/lang-study/index.md"}'),n={name:"study/lang-study/index.md"};function s(d,r,o,c,i,p){return e(),a("div")}const u=t(n,[["render",s]]);export{l as __pageData,u as default};

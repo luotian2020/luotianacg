@@ -302,4 +302,105 @@ git pull origin master --allow-unrelated-histories
 ```shell
 git reset 文件夹/文件名
 ```
+12.4 
+重置本地分支与远程分支的映射关系
 
+切入到要取消映射关系的分支
+
+撤销本地分支与远程分支的映射关系
+
+```shell
+git branch --unset-upstream
+```
+
+重新设置映射关系
+
+```shell
+git branch -u 远程分支名
+```
+
+或者
+
+```shell
+git branch --set-upstream-to 远程分支名
+```
+
+12.5
+
+在切换分支时现有的修改不需要进行commit时，可以使用stash命令进行贮藏
+
+```shell
+git stash save '注释'
+```
+
+如果使用
+
+```shell
+git stash 
+```
+
+会自动生成注释。
+
+需要用时，则可以通过
+
+```shell
+git stash pop
+```
+
+将当前stash中的最近添加的内容弹出，因为是栈，所以遵循先进后出的原则
+
+如果列表中有多个stash，可以用以下命令弹出指定的行, 其中 stash@{0} 就相当于是索引
+
+```shell
+git stash pop stash@{0}
+```
+
+此种恢复会导致list中的该存储删除
+
+如果不想删除，则可以使用
+
+```shell
+git stash apply
+```
+
+将当前stash中的最近添加的内容恢复
+
+恢复至指定存储·
+
+```shell
+git stash apply stash@{0}
+```
+
+清除指定存储
+
+```shell
+git stash drop stash@{0}
+```
+
+清除全部存储
+
+```shell
+git stash clear
+```
+
+查看存储列表
+
+```shell
+git stash list
+```
+
+查看改动
+
+默认show第一个存储,如果要显示其他存贮，后面加stash@{$num}，比如第二个 `git stash show stash@{1}`
+
+```shell
+git stash show
+```
+
+显示第一个存储的改动，如果想显示其他存存储，命令：`git stash show  stash@{$num}  -p` ，比如第二个：`git stash show  stash@{1}  -p`
+
+```shell
+git stash show -p
+```
+
+应当注意，git stash 存储的内容与分支独立，不受分支影响。

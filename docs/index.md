@@ -4,9 +4,9 @@ hero:
   name: LuoTian-ACG
   text: 探究技术的意义
   tagline: 心如花木，向阳而生
-  image:
-    src: https://api.likepoems.com/img/bing
-    alt: image
+#  image:
+#    src: https://api.likepoems.com/img/bing
+#    alt: image
   actions:
     - theme: brand
       text: 开始学习

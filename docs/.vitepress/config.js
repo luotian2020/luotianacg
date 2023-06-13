@@ -6,11 +6,11 @@ module.exports = {
     base: '/luotianacg-wiki/',
     head: [
         // 添加图标
-        ['link', { rel: 'icon', href: '/public/logo.png' }]
+        ['link', { rel: 'icon', href: '/public/logo.jpg' }]
     ],
     themeConfig: {
         // 网站 logo
-        logo: '/public/logo.png',
+        logo: '/public/logo.jpg',
         // 网站标题
         siteTitle: 'LuoTianACG-Wiki',
         // 启动页面丝滑滚动

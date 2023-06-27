@@ -112,3 +112,64 @@ case when condition1 then val1
 select * from table where rownum<100
 ```
 
+3.5 动态执行sql语句可以用
+
+```sql
+EXECUTE IMMEDIATE 'sqlt语句' using 参数
+```
+
+eg:
+
+```sql
+execute immediate 'insert into dept values   (:1, :2, :3)'   
+     using 50, l_depnam, l_loc;
+```
+
+3.5  mybatis #{}与${}的区别
+
+- #{}将传入的值处理为字符串，${} 将传入的值只是进行替换。
+- #{}可以防止sql注入，${}常用于传表的字段名，表名。
+
+3.6  mybatis 转义字符
+
+| 原符号 | mybatis |
+| ------ | ------- |
+| <      | \&lt;   |
+| \>     | \&gt;   |
+| &      | \&amp;  |
+| ’      | \&apos; |
+| "      | \&quot; |
+
+3.7 mybatis  
+
+动态sql foreach
+
+collection 参数值一般为list与array
+
+Mybatis中对于多个参数则封装为Map,以@Param注解的值为key,否则默认统一使用数据序号,从1开始。
+
+```sql
+and PK_ID IN 
+<foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+            #{item}
+</foreach>
+```
+
+foreach 参数
+
+foreach元素的属性主要有item，index，collection，open，separator，close。
+
+- **item**：集合中元素迭代时的别名，该参数为必选。
+- **index**：在list和数组中,index是元素的序号，在map中，index是元素的key，该参数可选
+- **open**：foreach代码的开始符号，一般是(和close=")"合用。常用在in(),values()时。该参数可选
+- **separator**：元素之间的分隔符，例如在in()的时候，separator=","会自动在元素中间用“,“隔开，避免手动输入逗号导致sql错误，如in(1,2,)这样。该参数可选。
+- **close:** foreach代码的关闭符号，一般是)和open="("合用。常用在in(),values()时。该参数可选。
+- **collection:** 要做foreach的对象，作为入参时，List对象默认用"list"代替作为键，数组对象有"array"代替作为键，Map对象没有默认的键。当然在作为入参时可以使用@Param("keyName")来设置键，设置keyName后，list,array将会失效。 除了入参这种情况外，还有一种作为参数对象的某个字段的时候。举个例子：如果User有属性List ids。入参是User对象，那么这个collection = "ids".如果User有属性Ids ids;其中Ids是个对象，Ids有个属性List id;入参是User对象，那么collection = "ids.id"
+
+
+
+在使用foreach的时候最关键的也是最容易出错的就是collection属性，该属性是必须指定的，但是在不同情况下，该属性的值是不一样的，主要有一下3种情况： 
+
+- 如果传入的是单参数且参数类型是一个List的时候，collection属性值为list .
+- 如果传入的是单参数且参数类型是一个array数组的时候，collection的属性值为array .
+- 如果传入的参数是多个的时候，我们就需要把它们封装成一个Map了，当然单参数也可以封装成map，实际上如果你在传入参数的时候，在MyBatis里面也是会把它封装成一个Map的，map的key就是参数名，所以这个时候collection属性值就是传入的List或array对象在自己封装的map里面的key.

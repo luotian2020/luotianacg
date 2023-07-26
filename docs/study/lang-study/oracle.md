@@ -173,3 +173,18 @@ foreach元素的属性主要有item，index，collection，open，separator，cl
 - 如果传入的是单参数且参数类型是一个List的时候，collection属性值为list .
 - 如果传入的是单参数且参数类型是一个array数组的时候，collection的属性值为array .
 - 如果传入的参数是多个的时候，我们就需要把它们封装成一个Map了，当然单参数也可以封装成map，实际上如果你在传入参数的时候，在MyBatis里面也是会把它封装成一个Map的，map的key就是参数名，所以这个时候collection属性值就是传入的List或array对象在自己封装的map里面的key.
+
+3.8 排序
+
+sql中进行排序
+
+```sql
+order by 字段一 ASC,字段二 desc
+```
+
+对于数字型的字符串，如果要进行排序，可以通过利用to_number函数将字符串转为数字，然后再进行排序，否则出来的结果为乱序。
+
+```sql
+order by to_number(数字型字符串) desc
+```
+

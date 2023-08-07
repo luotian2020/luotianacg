@@ -188,3 +188,35 @@ order by 字段一 ASC,字段二 desc
 order by to_number(数字型字符串) desc
 ```
 
+3.9 oracle 中 varchar与varchar2 的区别
+
+varchar 为定长的字符数据，最长可为2000字符；varchar2 为可变长字符数据，最大长度为4000，二者并无本质的区别；varchar2是oracle提供的独特的数据类型oracle保证在任何版本中该数据类型向上和向下兼容但不保证varchar,这是因为varchar是标准sql提供的数据类型有可能随着sql标准的变化而改变.char对于不够位数的用空格添补，varchar2不用.varchar2把所有字符都占两字节处理(一般情况下)，varchar只对汉字和全角等字符占两字节，数字，英文字符等都是一个字节； VARCHAR2把空串等同于null处理，而varchar仍按照空串处理； VARCHAR2字符要用几个字节存储，要看数据库使用的字符集.
+
+3.10 创建同义词：
+
+```sql
+create synonym 别名 for 数据库表名或dblink
+```
+
+创建oracle db link
+
+```sql
+create  database link db_1
+connect to	db_2_user identified by "db_2_user_password"
+using '
+demo=
+(description=
+(ADDRESS_LIST=
+(ADDRESS=(PROTOCOL=TCP)(HOST=db_2_ip)(PORT=1521)))
+(CONNNECT_DATA=
+(SERVICE_NAME=db_2_server)
+)
+)
+'
+```
+
+ db_1是db link的名称；
+    db_2_user是DB2这台机器上源数据库的用户名；
+    db_2_user_password是密码；
+    db_2_ip是DB2数据库地址，
+    db_2_server是DB2数据库服务名。

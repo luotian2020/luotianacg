@@ -117,6 +117,15 @@ module.exports = {
                     ]
                 },
             ],
+            '/life/nixiang': [
+                {
+                    text: '接口分析',
+                    collapsible: true,
+                    items: [
+                        {text: 'cpp', link: '/life/nixiang/cpp'},
+                    ]
+                },
+            ],
             '/project/pioneer': [
                 {
                     text: '信学先锋',

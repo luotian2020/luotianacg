@@ -435,3 +435,190 @@ appversion	3.11.5
 }
 ```
 
+## 漫展搜索
+
+根据关键词搜索漫展信息
+
+url
+
+```
+https://www.allcpp.cn/api/event/getEventMainList.do
+```
+
+方法：post
+
+header:
+
+| :method         | POST                                                         |
+| --------------- | ------------------------------------------------------------ |
+| :path           | /api/event/getEventMainList.do                               |
+| :authority      | www.allcpp.cn                                                |
+| :scheme         | https                                                        |
+| content-type    | application/x-www-form-urlencoded                            |
+| accept-encoding | gzip                                                         |
+| cookie          | JSESSIONID=9E18CB05D2DD6B7C83D51EB726D40E84; token=FX10FqMz83mKKKFdcdz75aJ/S6Geucge5K8leqNXJVnIwp4nLMNAmo/vkKHFXVBpHQraYj/1G4JgAXwoCDvABGZoO7MoZCPEJXwkMifS/QX7ls4pov5t46N8gwXLjoyagxOJl+w9d/EyKIXuHzD7QlPtvkLrBcgwy4PJareUyw8=; cdn_sec_tc=8be3e64716918448359684771e861788f98485299d1b2bbcc736d80489; acw_tc=8be3e64716918448359684771e861788f98485299d1b2bbcc736d80489; JALKSJFJASKDFJKALSJDFLJSF=781819417288b6f58984d84affab4c32989a45bd67139.227.63.135_6922210595 |
+| user-agent      | okhttp/3.14.7                                                |
+| content-length  | 409                                                          |
+| appheader       | mobile                                                       |
+| equipmenttype   | 1                                                            |
+| deviceversion   | 25                                                           |
+| devicespec      | SM-G9810                                                     |
+| appversion      | 3.11.6                                                       |
+
+传输内容：
+
+| cityid        | 0                                                            |
+| ------------- | ------------------------------------------------------------ |
+| isnew         | 1                                                            |
+| orderbyid     | 1                                                            |
+| searchstring  | CP                                                           |
+| typeid        | 0                                                            |
+| pageSize      | 20                                                           |
+| pageindex     | 1                                                            |
+| deviceId      | b615637e514d53564a6b6f9da1b94c51                             |
+| bid           | cn.comicup.apps.cppub                                        |
+| appVersion    | 3.11.6                                                       |
+| deviceSpec    | SM-G9810                                                     |
+| token         | FX10FqMz83mKKKFdcdz75aJ/S6Geucge5K8leqNXJVnIwp4nLMNAmo/vkKHFXVBpHQraYj/1G4JgAXwoCDvABGZoO7MoZCPEJXwkMifS/QX7ls4pov5t46N8gwXLjoyagxOJl+w9d/EyKIXuHzD7QlPtvkLrBcgwy4PJareUyw8= |
+| equipmentType | 1                                                            |
+| deviceVersion | 25                                                           |
+
+返回内容：
+
+```json
+{
+	"result": {
+		"pageCount": 1,
+		"total": 3,
+		"list": [{
+			"eventId": 1490,
+			"eventMainId": 1360,
+			"eventName": "COMICUPGZ05",
+			"picUrl": "https://imagecdn3.allcpp.cn/upload/2023/5/0bd81190-ae04-4f3e-9216-76de399ef623.jpg",
+			"typeId": 2,
+			"type": "综合同人展",
+			"enterTime": 1692979200000,
+			"endTime": 1693065600000,
+			"enterAddress": "保利世贸博览馆",
+			"doujinshiCount": 69420,
+			"circleCount": 5545,
+			"wannaGoCount": 67696,
+			"ticketEnabled": "电子票未开票",
+			"ticketEnabledCode": 2,
+			"positionIsAnnounced": "未公布",
+			"positionIsAnnouncedCode": 2,
+			"positionEnabled": "申摊已结束",
+			"positionEnabledCode": 4,
+			"isExclusive": 1,
+			"priority": 999,
+			"enabled": 0,
+			"tbSellLink": "",
+			"canAddDoujinshi": 0,
+			"canApplyPosition": 1,
+			"isApplyPositionStart": 1,
+			"approveClosed": 1
+		}, {
+			"eventId": 1334,
+			"eventMainId": 1216,
+			"eventName": "五悠CP向主题同好会-广州",
+			"picUrl": "https://imagecdn3.allcpp.cn/upload/2023/7/cb0c6ecd-4857-452f-b13e-ff1a627cd664.jpg",
+			"typeId": 3,
+			"type": "ONLY",
+			"enterTime": 1696262400000,
+			"endTime": 1696262400000,
+			"enterAddress": "广州市天河区黄埔大道中322号粤大金融城国际酒店（地铁5号线科韵路站A口）",
+			"doujinshiCount": 143,
+			"circleCount": 23,
+			"wannaGoCount": 883,
+			"ticketEnabled": "电子票开票中",
+			"ticketEnabledCode": 1,
+			"positionIsAnnounced": "未公布",
+			"positionIsAnnouncedCode": 2,
+			"positionEnabled": "申摊开放中",
+			"positionEnabledCode": 2,
+			"isExclusive": 1,
+			"priority": 0,
+			"enabled": 0,
+			"tbSellLink": "",
+			"canAddDoujinshi": 0,
+			"canApplyPosition": 1,
+			"isApplyPositionStart": 1,
+			"approveClosed": 0
+		}, {
+			"eventId": 1673,
+			"eventMainId": 1530,
+			"eventName": "五悠CP向主题同好会-上海",
+			"picUrl": "https://imagecdn3.allcpp.cn/upload/2023/8/71aeeca1-31b8-4111-92db-f07364bd6e34.jpg",
+			"typeId": 3,
+			"type": "ONLY",
+			"enterTime": 1702051200000,
+			"endTime": 1702051200000,
+			"enterAddress": "待定",
+			"doujinshiCount": 9,
+			"circleCount": 2,
+			"wannaGoCount": 112,
+			"ticketEnabled": "电子票未开票",
+			"ticketEnabledCode": 2,
+			"positionIsAnnounced": "未公布",
+			"positionIsAnnouncedCode": 2,
+			"positionEnabled": "申摊开放中",
+			"positionEnabledCode": 2,
+			"isExclusive": 1,
+			"priority": 0,
+			"enabled": 0,
+			"tbSellLink": "",
+			"canAddDoujinshi": 0,
+			"canApplyPosition": 1,
+			"isApplyPositionStart": 1,
+			"approveClosed": 0
+		}],
+		"currentPage": 3
+	},
+	"message": "",
+	"isSuccess": true
+}
+```
+
+## 获取购票人信息
+
+url
+
+```
+https://www.allcpp.cn/allcpp/user/purchaser/getList.do
+```
+
+方法：get
+
+header:
+
+| :method         | GET                                                          |
+| --------------- | ------------------------------------------------------------ |
+| :path           | /allcpp/user/purchaser/getList.do?deviceId=b615637e514d53564a6b6f9da1b94c51&bid=cn.comicup.apps.cppub&appVersion=3.11.6&deviceSpec=SM-G9810&token=FX10FqMz83mKKKFdcdz75aJ%2FS6Geucge5K8leqNXJVnIwp4nLMNAmo%2FvkKHFXVBpHQraYj%2F1G4JgAXwoCDvABGZoO7MoZCPEJXwkMifS%2FQX7ls4pov5t46N8gwXLjoyagxOJl%2Bw9d%2FEyKIXuHzD7QlPtvkLrBcgwy4PJareUyw8%3D&equipmentType=1&deviceVersion=25 |
+| :authority      | www.allcpp.cn                                                |
+| :scheme         | https                                                        |
+| accept-encoding | gzip                                                         |
+| cookie          | JSESSIONID=9E18CB05D2DD6B7C83D51EB726D40E84; token=FX10FqMz83mKKKFdcdz75aJ/S6Geucge5K8leqNXJVnIwp4nLMNAmo/vkKHFXVBpHQraYj/1G4JgAXwoCDvABGZoO7MoZCPEJXwkMifS/QX7ls4pov5t46N8gwXLjoyagxOJl+w9d/EyKIXuHzD7QlPtvkLrBcgwy4PJareUyw8=; cdn_sec_tc=8be3e64716918448359684771e861788f98485299d1b2bbcc736d80489; acw_tc=8be3e64716918448359684771e861788f98485299d1b2bbcc736d80489; JALKSJFJASKDFJKALSJDFLJSF=781819417288b6f58984d84affab4c32989a45bd67139.227.63.135_6922210595 |
+| user-agent      | okhttp/3.14.7                                                |
+
+传输内容:
+
+| deviceId      | b615637e514d53564a6b6f9da1b94c51                             |
+| ------------- | ------------------------------------------------------------ |
+| bid           | cn.comicup.apps.cppub                                        |
+| appVersion    | 3.11.6                                                       |
+| deviceSpec    | SM-G9810                                                     |
+| token         | FX10FqMz83mKKKFdcdz75aJ/S6Geucge5K8leqNXJVnIwp4nLMNAmo/vkKHFXVBpHQraYj/1G4JgAXwoCDvABGZoO7MoZCPEJXwkMifS/QX7ls4pov5t46N8gwXLjoyagxOJl+w9d/EyKIXuHzD7QlPtvkLrBcgwy4PJareUyw8= |
+| equipmentType | 1                                                            |
+| deviceVersion | 25                                                           |
+
+返回内容：
+
+```json
+[{
+	"id": 1338422,
+	"realname": "XXX",
+	"idcard": "412721190001570694",
+	"mobile": "18522340756",
+	"validType": 0 //身份证类型
+}]
+```

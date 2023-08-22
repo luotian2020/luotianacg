@@ -220,3 +220,51 @@ demo=
     db_2_user_password是密码；
     db_2_ip是DB2数据库地址，
     db_2_server是DB2数据库服务名。
+
+3.11 oracle 数据库更新数据
+
+根据一个表更新另一个表的内容（需要进行连接的）
+
+更新方式一：
+
+```sql
+update (
+  select t1.name name1, t2.name name2
+  from table1 t1
+    left join table2 t2 on t1.id = t2.id
+  where t1.age > 20
+) tmp
+set tmp.name1 = tmp.name2;
+```
+
+如果报如下错误：无法修改与非键值保存表对应的列。
+
+则可以选择更新方式：
+
+```sql
+UPDATE table1 t1 
+SET t1.name = (SELECT t2.name
+               FROM table2 t2
+               WHERE t1.id = t2.id)
+WHERE t1.age > 20
+AND EXISTS (SELECT t2.name
+            FROM table2 t2
+            WHERE t1.id = t2.id);
+```
+
+如果报如下错误：单行子查询返回多个结果
+
+则可以选择下一步更新方式：
+
+```sql
+UPDATE table1 t1 
+SET t1.name = (SELECT max(t2.name)
+               FROM table2 t2
+               WHERE t1.id = t2.id)
+WHERE t1.age > 20
+AND EXISTS (SELECT t2.name
+            FROM table2 t2
+            WHERE t1.id = t2.id);
+```
+
+注意：在plSql中更新完数据记得提交。

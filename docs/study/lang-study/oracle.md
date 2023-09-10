@@ -2,7 +2,7 @@
 
 ### 存储过程
 
-创建存储过程
+#### 创建
 
 有参
 
@@ -28,21 +28,52 @@ end test_pro;
 
 ### 常用函数：
 
-sys_guid(): 32位序列号，具有世界唯一性。（同一数据）
+#### sys_guid()
 
-sysdate: 获取当日日期，一般与to_char 连用，即to_char(sysdate,'yyyy-MM-dd')
+ 32位序列号，具有世界唯一性。（同一数据）
 
-replace(org_str,sub_str, val):将org_str中含有的sub_str进行替换为val. 
+#### sysdate
 
-instr(org_str,sub_str): 判断字符串在那个位置，返回该字符串的索引（字符串默认索引从1开始）。
+ 获取当日日期，一般与to_char 连用，即to_char(sysdate,'yyyy-MM-dd')
 
-regexp_count(source_str,pattern)：返回pattern在字符串出现的次数，如果未找到，返回0。
+####  replace(org_str,sub_str, val)
 
-decode(expression,condition_1,result_1.condition_2,result_2,...,result_default) :如果expression符合condition_1,则返回result_1，符合condition_2,则返回result_2,如果都不符合，则返回result_default,如果result_defsault不存在，则返回null.
+将org_str中含有的sub_str进行替换为val. 
+
+#### instr(org_str,sub_str): 
+
+判断字符串在那个位置，返回该字符串的索引（字符串默认索引从1开始）。
+
+#### regexp_count(source_str,pattern)：
+
+返回pattern在字符串出现的次数，如果未找到，返回0。
+
+#### decode(expression,condition_1,result_1.condition_2,result_2,...,result_default) 
+
+如果expression符合condition_1,则返回result_1，符合condition_2,则返回result_2,如果都不符合，则返回result_default,如果result_defsault不存在，则返回null.
+
+#### SYSTIMESTAMP
+
+获取当前时间戳。
+
+#### TRUNC（date[,fmt]）
+
+返回指定格式的日期字符串，例子如下：
+
+```sql
+1.select trunc(sysdate) from dual --2011-3-18 今天的日期为2011-3-18
+2.select trunc(sysdate, 'mm')  from  dual --2011-3-1  返回当月第一天.
+3.select trunc(sysdate,'yy') from dual --2011-1-1    返回当年第一天
+4.select trunc(sysdate,'dd') from dual --2011-3-18  返回当前年月日
+5.select trunc(sysdate,'yyyy') from dual --2011-1-1  返回当年第一天
+6.select trunc(sysdate,'d') from dual --2011-3-13 (星期天)返回当前星期的第一天
+7.select trunc(sysdate, 'hh') from dual  --2011-3-18 14:00:00  当前时间为14:41 
+8.select trunc(sysdate, 'mi') from dual --2011-3-18 14:41:00  TRUNC()函数没有秒的精确
+```
 
 ### 场景
 
-3.1 字段是否为空
+#### 3.1 字段是否为空
 
 -  某个字段不为空：
 
@@ -82,7 +113,7 @@ SELECT COALESCE (value1, value2, value3) FROM table_name
 SELECT NVL(value,’default’) FROM table_name
 ```
 
-3.2 根据分隔符将某一字段分割为多行
+#### 3.2 根据分隔符将某一字段分割为多行
 
 仅针对一行数据
 
@@ -96,7 +127,7 @@ select
  CONNECT BY  regexp_substr(m.NOTE, '[^'||chr(10)||']+', 1, rownum, 'i') is not NULL
 ```
 
-3.3 在select 语句中根据不同的值进行映射为其他的值
+#### 3.3 在select 语句中根据不同的值进行映射为其他的值
 
 可以使用：
 
@@ -106,7 +137,7 @@ case when condition1 then val1
      end as tablefieid,
 ```
 
-3.4 oracle中没有limit用法，可以根据 rownum进行实现
+#### 3.4 oracle中没有limit用法，可以根据 rownum进行实现
 
 ```sql
 select * from table where rownum<100
@@ -125,12 +156,12 @@ execute immediate 'insert into dept values   (:1, :2, :3)'
      using 50, l_depnam, l_loc;
 ```
 
-3.5  mybatis #{}与${}的区别
+#### 3.5  mybatis #{}与${}的区别
 
 - #{}将传入的值处理为字符串，${} 将传入的值只是进行替换。
 - #{}可以防止sql注入，${}常用于传表的字段名，表名。
 
-3.6  mybatis 转义字符
+#### 3.6  mybatis 转义字符
 
 | 原符号 | mybatis |
 | ------ | ------- |
@@ -140,9 +171,7 @@ execute immediate 'insert into dept values   (:1, :2, :3)'
 | ’      | \&apos; |
 | "      | \&quot; |
 
-3.7 mybatis  
-
-动态sql foreach
+#### 3.7 mybatis  动态sql foreach
 
 collection 参数值一般为list与array
 
@@ -174,7 +203,7 @@ foreach元素的属性主要有item，index，collection，open，separator，cl
 - 如果传入的是单参数且参数类型是一个array数组的时候，collection的属性值为array .
 - 如果传入的参数是多个的时候，我们就需要把它们封装成一个Map了，当然单参数也可以封装成map，实际上如果你在传入参数的时候，在MyBatis里面也是会把它封装成一个Map的，map的key就是参数名，所以这个时候collection属性值就是传入的List或array对象在自己封装的map里面的key.
 
-3.8 排序
+#### 3.8 排序
 
 sql中进行排序
 
@@ -188,11 +217,11 @@ order by 字段一 ASC,字段二 desc
 order by to_number(数字型字符串) desc
 ```
 
-3.9 oracle 中 varchar与varchar2 的区别
+#### 3.9 oracle 中 varchar与varchar2 的区别
 
 varchar 为定长的字符数据，最长可为2000字符；varchar2 为可变长字符数据，最大长度为4000，二者并无本质的区别；varchar2是oracle提供的独特的数据类型oracle保证在任何版本中该数据类型向上和向下兼容但不保证varchar,这是因为varchar是标准sql提供的数据类型有可能随着sql标准的变化而改变.char对于不够位数的用空格添补，varchar2不用.varchar2把所有字符都占两字节处理(一般情况下)，varchar只对汉字和全角等字符占两字节，数字，英文字符等都是一个字节； VARCHAR2把空串等同于null处理，而varchar仍按照空串处理； VARCHAR2字符要用几个字节存储，要看数据库使用的字符集.
 
-3.10 创建同义词：
+#### 3.10 创建同义词：
 
 ```sql
 create synonym 别名 for 数据库表名或dblink
@@ -220,3 +249,120 @@ demo=
     db_2_user_password是密码；
     db_2_ip是DB2数据库地址，
     db_2_server是DB2数据库服务名。
+
+#### 3.11 oracle 数据库更新数据
+
+根据一个表更新另一个表的内容（需要进行连接的）
+
+更新方式一：
+
+```sql
+update (
+  select t1.name name1, t2.name name2
+  from table1 t1
+    left join table2 t2 on t1.id = t2.id
+  where t1.age > 20
+) tmp
+set tmp.name1 = tmp.name2;
+```
+
+如果报如下错误：无法修改与非键值保存表对应的列。
+
+则可以选择更新方式：
+
+```sql
+UPDATE table1 t1 
+SET t1.name = (SELECT t2.name
+               FROM table2 t2
+               WHERE t1.id = t2.id)
+WHERE t1.age > 20
+AND EXISTS (SELECT t2.name
+            FROM table2 t2
+            WHERE t1.id = t2.id);
+```
+
+如果报如下错误：单行子查询返回多个结果
+
+则可以选择下一步更新方式：
+
+```sql
+UPDATE table1 t1 
+SET t1.name = (SELECT max(t2.name)
+               FROM table2 t2
+               WHERE t1.id = t2.id)
+WHERE t1.age > 20
+AND EXISTS (SELECT t2.name
+            FROM table2 t2
+            WHERE t1.id = t2.id);
+```
+
+注意：在plSql中更新完数据记得提交。
+
+#### 3.12 oracle 函数返回数组类型
+
+一.创建表对象
+
+```sql
+CREATE OR REPLACE TYPE foms_obj AS OBJECT (
+    c_id              VARCHAR2(32),
+  c_kpi_code        VARCHAR2(32) ,
+  d_biz             DATE ,
+  c_status          VARCHAR2(2),
+ -- 表字段
+)
+```
+
+二.创建表
+
+```sql
+CREATE OR REPLACE TYPE foms_table AS TABLE OF foms_obj
+```
+
+三.创建表函数
+
+```sql
+CREATE OR REPLACE FUNCTION get_fixed_data_by_time RETURN foms_table IS
+    v_records foms_table := foms_table();
+		current_time TIMESTAMP;
+		fixed_time TIMESTAMP;
+BEGIN
+	  current_time:=SYSTIMESTAMP;
+		IF TO_CHAR(current_time, 'HH24:MI') >= '09:00' and TO_CHAR(current_time, 'HH24:MI') < '14:00'  THEN
+			fixed_time:=TRUNC(current_time, 'DD') + INTERVAL '9' HOUR;
+			FOR foms_rec IN (
+				 SELECT *
+        FROM V_FOMS_HS_GZ_TZCHBZLJFKB_CHK
+        WHERE D_XGSJ >= TRUNC(fixed_time) - INTERVAL '1' DAY + INTERVAL '14' HOUR
+          AND D_XGSJ < TRUNC(fixed_time) + INTERVAL '1' DAY + INTERVAL '9' HOUR
+			   ) LOOP
+        v_records.EXTEND;
+        v_records(v_records.COUNT) := foms_obj(
+        foms_rec.c_id ,
+  foms_rec.c_kpi_code,
+  foms_rec.d_biz,
+  foms_rec.c_status
+        );
+    END LOOP;
+	 ELSIF TO_CHAR(current_time, 'HH24:MI') >= '14:00' THEN
+		 fixed_time:=TRUNC(current_time, 'DD') + INTERVAL '14' HOUR;
+			FOR foms_rec IN (
+				 SELECT *
+        FROM V_FOMS_HS_GZ_TZCHBZLJFKB_CHK
+        WHERE D_XGSJ >= TRUNC(fixed_time) + INTERVAL '9' HOUR
+          AND D_XGSJ < TRUNC(fixed_time) + INTERVAL '14' HOUR
+			   ) LOOP
+        v_records.EXTEND;
+        v_records(v_records.COUNT) := foms_gz_tzchbzljfkb_obj(
+        foms_rec.c_id ,
+  foms_rec.c_kpi_code,
+  foms_rec.d_biz,
+  foms_rec.c_status
+        );
+    END LOOP;
+	ELSE
+		v_records:=foms_gz_tzchbzljfkb_table();
+	END IF;
+  RETURN v_records;
+END;
+```
+

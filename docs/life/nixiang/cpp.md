@@ -393,7 +393,7 @@ https://www.allcpp.cn/api/ticket/buyticketalipay.do
 
 | count         | 1                                                            |
 | ------------- | ------------------------------------------------------------ |
-| purchaserIds  |                                                              |
+| purchaserIds  | 123456（这里指购票人的id)                                    |
 | ticketTypeId  | 1968                                                         |
 | deviceId      | b615637e514d53564a6b6f9da1b94c51                             |
 | bid           | cn.comicup.apps.cppub                                        |

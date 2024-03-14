@@ -87,7 +87,7 @@ module.exports = {
                         {text: '正则表达式', link: '/study/lang-study/regexp'},
                         {text: 'oracle', link: '/study/lang-study/oracle'},
                         {text: 'go', link: '/study/lang-study/go'},
-                        
+                        {text: 'SQL', link: '/study/lang-study/sql'},
                     ]
                 },
             ],

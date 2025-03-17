@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,N as t}from"./chunks/framework.0799945b.js";const A=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"life/nixiang/cpp.md"}'),p={name:"life/nixiang/cpp.md"},o=t("",91),l=[o];function e(c,r,D,F,y,C){return n(),a("div",null,l)}const i=s(p,[["render",e]]);export{A as __pageData,i as default};

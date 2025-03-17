@@ -1,16 +1,14 @@
 module.exports = {
     title: 'LuoTianACG',
-    description: '探究技术的意义',
+    description: '探究人生的意义',
     lang: 'zh-CN',
-    // github pages 配置
-    base: '/luotianacg-wiki/',
     head: [
         // 添加图标
-        ['link', { rel: 'icon', href: '/public/logo.jpg' }]
+        ['link', { rel: 'icon', href: '/logo.jpg' }]
     ],
     themeConfig: {
         // 网站 logo
-        logo: '/public/logo.jpg',
+        logo: '/logo.jpg',
         // 网站标题
         siteTitle: 'LuoTianACG-Wiki',
         // 启动页面丝滑滚动
@@ -161,7 +159,7 @@ module.exports = {
         // 页面底部
         footer: {
             message: '洛天',
-            copyright: 'Copyright © 2023 LuoTianACG'
+            copyright: 'Copyright © 2025 LuoTianACG'
         }
     }
 }

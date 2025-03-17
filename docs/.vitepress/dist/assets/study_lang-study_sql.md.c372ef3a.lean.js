@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as a,N as s}from"./chunks/framework.0799945b.js";const q=JSON.parse('{"title":"SQL","description":"","frontmatter":{},"headers":[],"relativePath":"study/lang-study/sql.md"}'),r={name:"study/lang-study/sql.md"},n=s("",4),o=[n];function l(c,i,f,_,h,u){return a(),e("div",null,o)}const m=t(r,[["render",l]]);export{q as __pageData,m as default};

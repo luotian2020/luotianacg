@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as n,N as l}from"./chunks/framework.0799945b.js";const F=JSON.parse('{"title":"Oracle","description":"","frontmatter":{},"headers":[],"relativePath":"study/lang-study/oracle.md"}'),p={name:"study/lang-study/oracle.md"},o=l("",97),e=[o];function t(c,r,C,y,A,D){return n(),a("div",null,e)}const d=s(p,[["render",t]]);export{F as __pageData,d as default};

@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as e,N as s}from"./chunks/framework.0799945b.js";const g=JSON.parse('{"title":"白面鸮","description":"","frontmatter":{},"headers":[],"relativePath":"photo/baimianhao.md"}'),p={name:"photo/baimianhao.md"},h=s("",16),o=[h];function i(c,r,m,n,d,l){return e(),a("div",null,o)}const _=t(p,[["render",i]]);export{g as __pageData,_ as default};

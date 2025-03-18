@@ -37,6 +37,10 @@ module.exports = {
                 link: '/project/'
             },
             {
+                text: '摄影回忆录',
+                link: '/photo/'
+            },
+            {
                 text: '友情链接',
                 items: [
                     { text: 'Github', link: 'https://github.com/luotian2020' },
@@ -132,6 +136,15 @@ module.exports = {
                     collapsible: true,
                     items: [
                         {text: '部署流程', link: '/project/pioneer/pioneer-operation'},
+                    ]
+                },
+            ],
+            '/photo/': [
+                {
+                    text: '摄影回忆录',
+                    collapsible: true,
+                    items: [
+                        {text: '白面鸮', link: '/photo/baimianhao'},
                     ]
                 },
             ],
